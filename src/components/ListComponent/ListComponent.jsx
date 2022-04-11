@@ -35,12 +35,18 @@ const ListComponent = () => {
     // console.log(listName);
     const [heightWindow, setHeightWindow] = useState(document.documentElement.clientHeight);
 
+    function updateHeightWindow() {
+        if (window.innerWidth < 767) {
+            setHeightWindow(document.documentElement.clientHeight - 200);
+        } else setHeightWindow(document.documentElement.clientHeight);
+    }
+
     useEffect(() => {
-        window.addEventListener('resize', function () {
-            if (window.innerWidth < 767) {
-                setHeightWindow(document.documentElement.clientHeight - 200);
-            } else setHeightWindow(document.documentElement.clientHeight);
-        });
+        updateHeightWindow();
+
+        window.addEventListener('resize', updateHeightWindow);
+
+        return () => window.removeEventListener('resize', updateHeightWindow);
     }, []);
 
     return (
