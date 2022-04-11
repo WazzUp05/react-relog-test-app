@@ -1,0 +1,45 @@
+body {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+html {
+    font-size: 10px;
+    //scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 374px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    html {
+        font-size: calc(10px + 10 * (100vw - 375px) / 392);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    html {
+        font-size: calc(8px + 2.7 * (100vw - 768px) / 255);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    html {
+        font-size: calc(7.4px + 2 * (100vw - 1024px) / 256);
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+    html {
+        font-size: calc(9px + 0.5 * (100vw - 1280px) / 160);
+    }
+}
+
+@media (min-width: 1440px) {
+    html {
+        font-size: calc((10px * (100vw - 1600px) / 240));
+    }
+}
